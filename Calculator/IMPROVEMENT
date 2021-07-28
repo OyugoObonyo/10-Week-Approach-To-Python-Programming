@@ -1,0 +1,4 @@
+- Operators in a list/tuple to reduce codelength
+- Look into more exceptions (resolve bare excepts)
+- Introduce more operators i.e. power, square, squareroot
+- Enable direct operations on the fly i.e direct user input of 2+2
