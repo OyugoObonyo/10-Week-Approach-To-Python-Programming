@@ -1,0 +1,4 @@
+- Implement graphics
+- Implement timer (Automatic or player-requested)
+- Hint at correct answer (Automatic hint? Player-requested hint?)
+- Dynamic words list generation. Words keep changing at every program instance
