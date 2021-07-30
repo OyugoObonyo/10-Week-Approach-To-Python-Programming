@@ -2,3 +2,4 @@
 - Implement timer (Automatic or player-requested)
 - Hint at correct answer (Automatic hint? Player-requested hint?)
 - Dynamic words list generation. Words keep changing at every program instance
+- If you guess the same thing twice, life isn't taken away
