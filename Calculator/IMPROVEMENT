@@ -1,4 +1,5 @@
-- Operators in a list/tuple to reduce codelength
-- Look into more exceptions (resolve bare excepts)
-- Introduce more operators i.e. power, square, squareroot
-- Enable direct operations on the fly i.e direct user input of 2+2
+- Operators in a list/tuple to reduce codelength   ... DONE
+- Introduce more operators i.e. power, square, squareroot ... 	DONE
+- Enable direct operations on the fly i.e direct user input of 2+2 ... DONE
+
+** Improvements actualized in the imp-calculator.py file
