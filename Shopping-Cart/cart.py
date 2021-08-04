@@ -7,7 +7,7 @@ cart = []
 
 def add_item(user_item):
     """Adds item selected by a user to the cart"""
-    cart.push(user_item)
+    cart.append(user_item)
     print(f"{user_item} successfully added to cart")
 
 
@@ -31,27 +31,43 @@ def clear_cart(cart):
 
 def show_cart(cart):
     """Displays all items in the cart"""
-    for item in cart:
-        position = 1
-        print(f"{position}: {item}")
-        position += 1
+    if len(cart) == 0:
+        print("Sorry, Cart is empty")
+    else:
+        print(*cart, sep="\n")
 
 
 def main():
     """The main program function that handles the program's logic"""
-    user_action = input("You can add, remove, clear or show items on your cart.
-                        Select an option.  ")
-    user_action.lower()
-    user_item = input(f"Enter item you would like to {user_action}. ")
+    flag = 1
+    valid_actions = ["add", "remove", "clear", "show", "done"]
 
-    if user_action == "add":
-        add_item(user_item)
-    elif user_action == "remove":
-        remove_item(user_item)
-    elif user_action == "clear":
-        clear_cart(cart)
-    elif user_action == "show":
-        show_cart(cart)
+    while flag == 1:
+        user_action = input("Do you want to add, remove, clear or show items on your cart.\
+        (Type done after you're finished shopping) ")
+        
+        user_action.lower()        
+        if user_action not in valid_actions:
+            print("Please select a either add, remove, clear or show")
+        if user_action == "add" or user_action == "remove":
+            user_item = input(f"Enter item you would like to {user_action}. ")
+
+        if user_action == "add":
+            add_item(user_item)
+        elif user_action == "remove":
+            remove_item(user_item)
+        elif user_action == "clear":
+            clear_cart(cart)
+        elif user_action == "show":
+            show_cart(cart)
+        elif user_action == "done":
+            prompt = input("Would you like to view your cart before leaving? (Y/N) ")
+            if prompt == "Y":
+                show_cart(cart)
+                print("Thanks for shopping with us, Bye!")
+                break
+            elif prompt == "N":
+                break
 
 
 main()
