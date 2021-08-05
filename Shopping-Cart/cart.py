@@ -36,6 +36,7 @@ def show_cart(cart):
     else:
         print(*cart, sep="\n")
 
+# TODO: Add save_cart function
 
 def main():
     """The main program function that handles the program's logic"""
