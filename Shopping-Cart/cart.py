@@ -34,9 +34,15 @@ def show_cart(cart):
     if len(cart) == 0:
         print("Sorry, Cart is empty")
     else:
-        print(*cart, sep="\n")
+        print(*cart)
 
-# TODO: Add save_cart function
+
+def save_cart(cart):
+    """Writes cart content to another file and saves the file"""
+    with open("cart.txt","w") as f:
+        f.write("\n".join(cart))
+    print("\n")
+
 
 def main():
     """The main program function that handles the program's logic"""
@@ -62,13 +68,9 @@ def main():
         elif user_action == "show":
             show_cart(cart)
         elif user_action == "done":
-            prompt = input("Would you like to view your cart before leaving? (Y/N) ")
-            if prompt == "Y":
-                show_cart(cart)
-                print("Thanks for shopping with us, Bye!")
-                break
-            elif prompt == "N":
-                break
+            save_cart(cart)
+            print("Thanks for shopping with us, Bye!")
+            break
 
 
 main()
